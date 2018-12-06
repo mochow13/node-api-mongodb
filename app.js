@@ -6,7 +6,7 @@ const mongoose = require('mongoose'); // db
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
-
+const userRoutes = require('./api/routes/users');
 
 mongoose.connect(
     `mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PW}@ds151402.mlab.com:51402/simple-rest-api`,
@@ -34,6 +34,7 @@ app.use((req,res,next) => {
 
 app.use('/products', productRoutes);
 app.use('/orders', orderRoutes);
+app.use('/users', userRoutes);
 
 // error handling
 app.use((req,res,next) => {
