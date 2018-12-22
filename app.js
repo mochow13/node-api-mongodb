@@ -10,8 +10,10 @@ const userRoutes = require('./api/routes/users');
 
 require('dotenv').config()
 
+const url = process.env.MONGODB_URI;
+
 mongoose.connect(
-    `mongodb://${process.env.MLAB_USER}:${process.env.MLAB_PW}@ds151402.mlab.com:51402/simple-rest-api`,
+    url,
     {
         useNewUrlParser: true
     });
